@@ -125,7 +125,7 @@ proje.zip
 ----------
 
 ## 6. Projeyi AWS Sunucuya Gönderme (SCP)
-
+bunun için yeni terminal acın oraya bunu kopyalaıyn
 scp -i  "geci-key.pem" proje.zip ubuntu@IP_ADRESIN:~
 
 ----------
