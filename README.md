@@ -187,3 +187,5 @@ Bash
 
 ```
 sudo docker exec -it geci_dashboard python etl_spark_to_db.py
+
+sudo docker restart geci_dashboard
