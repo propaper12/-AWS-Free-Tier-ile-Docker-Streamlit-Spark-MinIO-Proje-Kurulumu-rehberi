@@ -230,6 +230,37 @@ Streamlit arayüzü açılıyorsa sistem başarıyla ayağa kalkmıştır.
 -   Free Tier sınırları içinde maksimum performans elde edilmesini sağlar.
     
 -   CV ve teknik mülakatlarda ciddi fark yaratır.
+-   AWS Free Tier kapsamında aylık toplam **720 saat** EC2 kullanım hakkımız var. Ama bu süre **her açtığımız sunucu için ayrı ayrı 720 saat değildir.** Tüm EC2 sunucularının açık kaldığı süre **toplamda** hesaplanır.
+
+Bu yüzden yeni bir proje açmadan önce, **eski EC2 sunucumuzu mutlaka silmemiz gerekir.**
+
+Eski EC2 Sunucusunu Silme Adımları
+1. AWS Console → EC2 → **Instances** kısmına giriyoruz.
+2. Sileceğimiz sunucuyu seçiyoruz.
+3. Üst taraftaki **Instance State** menüsüne basıyoruz.
+4. En altta bulunan **Terminate instance (Delete)** seçeneğine tıklıyoruz.
+5. Onayladıktan sonra sunucu birkaç dakika içinde tamamen siliniyor.
+
+Bu işlemden sonra artık yeni sunucularımızı **rahat rahat** açabiliriz.
+
+---
+Neden Silmemiz Gerek?
+
+Çünkü AWS süreyi **sunucu başına değil, toplam kullanım süresine göre** hesaplıyor.
+Örnek:
+- İlk açtığımız sunucu → **10 saat açık kaldı**
+- Yeni açtığımız sunucu → **10 saat açık kaldı**
+Toplam kullanım süresi:
+Yani her sunucu için ayrı ayrı 720 saat hakkımız yok.  
+Hepsi **aynı 720 saatlik limitten düşüyor.**  
+  
+---  
+  
+### Kısaca Özet  
+  
+- İşin bitince EC2 sunucunu **sil**  
+- Boş yere açık bırakma  
+- Böylece Free Tier süreni **en verimli şekilde kullanırsın**
 
 ### 2. Adım: Spark ETL Sürecini Başlat
 bu kısım benım kendı projem için kullanmanıza gerek yok
@@ -243,3 +274,4 @@ sudo docker exec -it geci_dashboard python ingest_to_s3.py
 sudo docker exec -it geci_dashboard python etl_spark_to_db.py
 
 sudo docker restart geci_dashboard
+
