@@ -238,6 +238,8 @@ bu kısım benım kendı projem için kullanmanıza gerek yok
 Bash
 
 ```
+sudo docker exec -it geci_dashboard python ingest_to_s3.py
+
 sudo docker exec -it geci_dashboard python etl_spark_to_db.py
 
 sudo docker restart geci_dashboard
