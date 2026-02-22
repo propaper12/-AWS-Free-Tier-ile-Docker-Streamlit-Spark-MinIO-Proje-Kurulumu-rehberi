@@ -1,0 +1,1 @@
+# -AWS-Free-Tier-ile-Docker-Streamlit-Spark-MinIO-Proje-Kurulumu-rehberi
