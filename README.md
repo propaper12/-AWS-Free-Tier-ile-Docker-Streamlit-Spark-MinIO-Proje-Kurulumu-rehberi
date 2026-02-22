@@ -136,7 +136,7 @@ sudo apt install unzip -y
 unzip proje.zip -d geci_projesi  
 cd geci_projesi  
 ls  -a
-
+cd projenin_adi
 `docker-compose.yml`, `Home.py` ve diğer dosyaları görüyorsanız işlem başarılıdır.
 
 ----------
