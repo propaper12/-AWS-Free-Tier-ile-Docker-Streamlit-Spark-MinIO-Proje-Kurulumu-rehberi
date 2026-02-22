@@ -64,7 +64,7 @@ AWS Console → EC2 → **Launch Instance**
 ### Storage
 
 Varsayılan **8 GiB → 30 GiB** olarak değiştirilmelidir.  
-*(Docker, Spark ve MinIO için disk alanı kritik öneme sahiptir.)*
+*sag taraftakı Launch instance butonuna basın (Docker, Spark ve MinIO için disk alanı kritik öneme sahiptir.)*
 
 ---
 
