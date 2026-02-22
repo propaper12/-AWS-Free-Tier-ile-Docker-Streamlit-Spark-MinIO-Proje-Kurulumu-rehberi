@@ -178,4 +178,12 @@ Streamlit arayüzü açılıyorsa sistem başarıyla ayağa kalkmıştır.
 -   Free Tier sınırları içinde maksimum performans elde edilmesini sağlar.
     
 -   CV ve teknik mülakatlarda ciddi fark yaratır.
-    
+
+### 2. Adım: Spark ETL Sürecini Başlat
+bu kısım benım kendı projem için kullanmanıza gerek yok
+Şimdi MinIO'daki o ham verileri alıp, temizleyip Postgres veritabanına atacağız.
+
+Bash
+
+```
+sudo docker exec -it geci_dashboard python etl_spark_to_db.py
