@@ -123,6 +123,58 @@ Zip dosyasının adı:
 proje.zip
 
 ----------
+### 5.1 GitHub Repository Hazırlığı (Lokal)  
+  
+Proje klasöründe aşağıdaki dosyaların bulunduğundan emin olun:  
+  
+- `docker-compose.yml`  
+- `Home.py`  
+- `Veri_Setleri/`  
+- `.env.example`  
+- `requirements.txt`  
+  
+> Güvenlik sebebiyle `.env` dosyası **repo içine eklenmemelidir.**  
+> Bunun yerine `.env.example` dosyası oluşturulmalıdır.  
+  
+---  
+  
+### 5.2 AWS Sunucu Üzerinde Git Kurulumu  
+  
+```bash  
+sudo apt update && sudo apt install git -y
+```
+### 5.3 GitHub Repository Klonlama
+
+git clone https://github.com/KULLANICI_ADIN/REPO_ADI.git  
+cd REPO_ADI
+
+----------
+
+### 5.4 Ortam Değişkenlerinin Tanımlanması (.env)
+
+Sunucu üzerinde `.env` dosyasını oluştur:
+
+nano .env
+
+### 5.5 Docker Servislerini Başlatma
+
+sudo docker-compose up --build  -d  
+sudo docker ps
+
+----------
+
+## Notlar
+
+-   `.env` dosyası **asla GitHub reposuna push edilmemelidir.**
+    
+-   Bu yöntem, **production deployment için önerilen standart yaklaşımdır.**
+    
+-   Kod güncellemesi için:
+    
+
+git pull  
+sudo docker-compose up --build  -d
+
 
 ## 6. Projeyi AWS Sunucuya Gönderme (SCP)
 bunun için yeni terminal acın oraya bunu kopyalaıyn
