@@ -69,3 +69,54 @@ AWS Console → EC2 → **Launch Instance**
 ```bash
 chmod 400 geci-key.pem
 ssh -i "geci-key.pem" ubuntu@IP_ADRESIN
+
+---
+##3. Swap (Sanal RAM) Oluşturma
+
+Bu adım kritik öneme sahiptir.
+
+sudo fallocate -l 2G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+
+Kontrol:
+
+free -h
+4. Docker ve Docker Compose Kurulumu
+sudo apt update && sudo apt install docker.io docker-compose -y
+sudo usermod -aG docker ubuntu
+exit
+
+Tekrar bağlan:
+
+ssh -i "geci-key.pem" ubuntu@IP_ADRESIN
+5. Proje Dosyalarının Hazırlanması (Lokal)
+
+Aşağıdaki dosyaları .zip haline getir:
+
+docker-compose.yml
+
+Home.py
+
+Veri_Setleri/
+
+.env
+
+requirements.txt
+
+Dosya adı:
+
+proje.zip
+6. Projeyi AWS Sunucuya Gönderme (SCP)
+scp -i "geci-key.pem" proje.zip ubuntu@IP_ADRESIN:~
+7. Dosyayı Sunucuda Açma
+sudo apt install unzip -y
+unzip proje.zip -d geci_projesi
+cd geci_projesi
+ls -a
+8. Docker Servislerini Başlatma
+sudo docker-compose up --build -d
+sudo docker ps
+9. Tarayıcıdan Erişim
+http://IP_ADRESIN:8501
