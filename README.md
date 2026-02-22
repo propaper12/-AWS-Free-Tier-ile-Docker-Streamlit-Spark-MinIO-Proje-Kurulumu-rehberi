@@ -69,7 +69,7 @@ Varsayılan **8 GiB → 30 GiB** olarak değiştirilmelidir.
 ---
 
 ## 2. Sunucuya SSH ile Bağlanma
-
+* IP_ADRESIN bulmak için ilk önce ec2 girin instance kısmında olsutrudgumuz kısımından intance ID ye basın orada  Public IPv4 address adresini goreceksınız bunu kopyalıyıp yapıstrıın*
 ```bash
 chmod 400 geci-key.pem
 ssh -i "geci-key.pem" ubuntu@IP_ADRESIN
