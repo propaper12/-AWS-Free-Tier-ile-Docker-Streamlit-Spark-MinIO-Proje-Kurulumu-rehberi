@@ -150,7 +150,7 @@ sudo docker ps
 
 ## 9. Tarayıcıdan Erişim
 
-http://IP_ADRESIN:8501
+http://IP_ADRESIN:8501 buradakı ıp ise publıc ıpv4 ıpniz olacak
 
 Streamlit arayüzü açılıyorsa sistem başarıyla ayağa kalkmıştır.
 
